@@ -1,0 +1,15 @@
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\bin\Debug\net10.0\Infrastructure.deps.json
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\bin\Debug\net10.0\Infrastructure.dll
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\bin\Debug\net10.0\Infrastructure.pdb
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\bin\Debug\net10.0\Core.dll
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\bin\Debug\net10.0\Core.pdb
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.csproj.AssemblyReference.cache
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.AssemblyInfoInputs.cache
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.AssemblyInfo.cs
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.csproj.CoreCompileInputs.cache
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastr.15EFFBFE.Up2Date
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.dll
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\refint\Infrastructure.dll
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\Infrastructure.pdb
+H:\Visual Studio Project\DEMO\skinet\Infrastructure\obj\Debug\net10.0\ref\Infrastructure.dll
