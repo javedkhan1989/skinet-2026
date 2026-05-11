@@ -44,11 +44,6 @@ export class ShopComponent implements OnInit {
     this.shopService.getBrands();
     this.shopService.getTypes();
     this.getProducts();
-
-    this.shopService.getProducts(this.shopParams).subscribe({
-      next: response => this.products=response,
-      error: error => console.log(error)      
-    })
   }
 
   getProducts(){

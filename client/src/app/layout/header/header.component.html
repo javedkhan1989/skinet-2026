@@ -1,12 +1,15 @@
 <header class="shadow-md p-3 w-full">
     <div class="flex  align-middle items-center justify-between ma-w-screen-2xl mx-auto">
-        <img src="/images/logo.png" alt="app logo" class="max-h-16">
+        <img routerLink="/" src="/images/logo.png" alt="app logo" class="max-h-16">
         <h1 class="text-xl font-bold">My App</h1>
-        <nav class="flex-gap-3 my-2 uppercase text-xl">
+        <nav class="flex-gap-3 my-2 uppercase text-2xl">
             <ul class="flex space-x-4">
-                <a href="#" class="hover:text-blue-500">Home</a>
-                <a href="#" class="hover:text-blue-500">About</a>
-                <a href="#" class="hover:text-blue-500">Contact</a>
+                <a routerLink="/"
+                 routerLinkActive="active" 
+                 [routerLinkActiveOptions]="{exact: true}"
+                 >Home</a>
+                <a routerLink="/shop" routerLinkActive="active">About</a>
+                <a >Contact</a>
             </ul>
         </nav>
 

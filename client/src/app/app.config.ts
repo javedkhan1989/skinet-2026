@@ -5,19 +5,22 @@ import { routes } from './app.routes';
 import { provideHttpClient } from '@angular/common/http';
 import { M } from '@angular/cdk/keycodes';
 import { MAT_DIALOG_DATA, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/dialog';
+import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    provideRouter(routes),
+    //provideBrowserGlobalErrorListeners(),    
     provideZoneChangeDetection({eventCoalescing: true}),
+    provideRouter(routes),
+    provideAnimationsAsync(),
     provideHttpClient(),
-    {
-      provide: MAT_DIALOG_DEFAULT_OPTIONS,
-      useValue: {
-        autofocus: 'dialog',
-        restoreFocus: true
-      }        
-    }
+    // provideHttpClient(),
+    // {
+    //   provide: MAT_DIALOG_DEFAULT_OPTIONS,
+    //   useValue: {
+    //     autofocus: 'dialog',
+    //     restoreFocus: true
+    //   }        
+    // }
   ]
 };

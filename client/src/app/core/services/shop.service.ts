@@ -24,18 +24,22 @@ export class ShopService {
       params = params.append('types', shopParams.types.join(','));
     }
 
-    if(shopParams.sort){
+    if (shopParams.sort) {
       params = params.append('sort', shopParams.sort);
     }
 
-    if(shopParams.search){
+    if (shopParams.search) {
       params = params.append('search', shopParams.search);
     }
-    
-    params=params.append('pageSize', shopParams.pageSize);
-    params=params.append('pageIndex', shopParams.pageNumber);
 
-    return this.http.get<pagination<Product>>(this.baseUrl + 'products',{params})
+    params = params.append('pageSize', shopParams.pageSize);
+    params = params.append('pageIndex', shopParams.pageNumber);
+
+    return this.http.get<pagination<Product>>(this.baseUrl + 'products', { params });
+  }
+
+  getProduct(id: number) {
+    return this.http.get<Product>(this.baseUrl + 'products/' + id);
   }
 
   getBrands() {
