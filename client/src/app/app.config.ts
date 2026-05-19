@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
+import { APP_INITIALIZER, ApplicationConfig, inject, provideAppInitializer, provideBrowserGlobalErrorListeners, provideZoneChangeDetection } from '@angular/core';
 import { provideRouter } from '@angular/router';
 import 'zone.js';
 import { routes } from './app.routes';
@@ -8,12 +8,33 @@ import { MAT_DIALOG_DATA, MAT_DIALOG_DEFAULT_OPTIONS } from '@angular/material/d
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { errorInterceptor } from './core/interceptors/error-interceptor';
 import { loadingInterceptor } from './core/interceptors/loading-interceptor';
+import { InitService } from './core/services/init.service';
+import { lastValueFrom } from 'rxjs';
+
+function initializeApp(initService: InitService) {
+
+}
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideZoneChangeDetection({eventCoalescing: true}),
+    provideBrowserGlobalErrorListeners(),
+    provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes),
-    provideAnimationsAsync(),
-    provideHttpClient(withInterceptors([errorInterceptor,loadingInterceptor])),    
+    provideHttpClient(withInterceptors([errorInterceptor, loadingInterceptor])),
+    provideAppInitializer(async () => {
+      const initService = inject(InitService);
+      return lastValueFrom(initService.init()).finally(() => {
+        const splash = document.getElementById('initial-splash');
+        if (splash) {
+          splash.remove();
+        }
+      });
+    }),
+    {
+      provide: MAT_DIALOG_DEFAULT_OPTIONS,
+      useValue: {
+        autoFocus: 'dialog', restorefocus: false
+      }
+    }
   ]
 };
