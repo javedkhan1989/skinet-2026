@@ -56,10 +56,9 @@ public class AccountController(SignInManager<AppUser> signInManager) : BaseApiCo
         return Ok(new {user.FirstName, user.LastName, user.Email,Address=user.Address?.ToDo()});
     }
 
-    [HttpGet]
+    [HttpGet("auth-status")]
     public ActionResult GetAuthState()
-    {
-        if(User.Identity?.IsAuthenticated == true) return Ok(new{IsAuthenticated = true});
+    {        
         return Ok(new{IsAuthenticated = User.Identity?.IsAuthenticated ?? false});
     }
 
